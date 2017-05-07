@@ -19,6 +19,11 @@ require_once ('connect_db.php');
 <html>
 <head>
 <style>
+.contents{
+ position:relative;
+ top:10%;
+
+}
 body {
     margin: 0;
 }
@@ -59,7 +64,6 @@ input,select,button {
 input,select,button {
     border: 1px solid powderblue;
     margin: 10px;
-	margin-top: 50px;
 }
 
 
@@ -79,7 +83,7 @@ input,select,button {
 
 <div style="margin-left:25%;padding:1px 16px;height:1000px;">
  <?php if(valueCheck('action','department')) : ?>
- <div align="center">
+ <div class="contents" align="center">
  <form method="post" action="dept.php?action=add">
 <input type="text" name="dName" placeholder="Department Name"><br>
 <input type="text" name="dept_code" placeholder="Department Code"><br>
@@ -88,7 +92,7 @@ input,select,button {
 </div>
 
  <?php elseif(valueCheck('action','faculty')) : ?>
- <div align="center">
+ <div class="contents" align="center">
 <form method="post" action="faculty.php?action=addUser">
 <input type="text" placeholder="Faculty Name" name="fullName"><br>
 <input type="text" placeholder="User Name" name="uName"><br>
@@ -106,7 +110,7 @@ input,select,button {
 </form>
 
 <?php elseif(valueCheck('action','batches')) : ?>
-<div align="center">
+<div class="contents" align="center">
 <form method="post" action="batches.php?action=add">
 <input type="text" placeholder="Batch Name" name="batch_name"><br>
 <select  name="dept" data-placeholder="Choose Department..." required>
@@ -121,7 +125,7 @@ input,select,button {
 </div>
 </form>
 <?php elseif(valueCheck('action','room')) : ?>
-<div align="center">
+<div class="contents "align="center">
 <form method="post" action="rooms.php?action=add">
 <input type="text" placeholder="Room Name" name="room_name"><br>
 <input type="text" placeholder="Capacity" name="capacity"><br>
@@ -131,7 +135,7 @@ input,select,button {
 
 
 <?php else: ?>
-<div align="center">
+<div class="contents" align="center">
 <form method="post" action="courses.php?action=add">
 <select name="fac_id" id="faculty"  data-placeholder="Choose Faculty...">
 <option label="Choose Department..." disabled selected>Choose any of these...</option>
